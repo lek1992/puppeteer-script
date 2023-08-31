@@ -14,3 +14,9 @@ Login FB
     Input Text    ${fb-txt-email}    ${fb.email}
     Input Text    ${fb-txt-password}    ${fb.password}
     Click Element    ${fb-btn-login}
+
+Verify in case input email Incorrect
+    Wait Until Page Contains Element    ${incorrect_email_msg}
+
+Verify in case input password Incorrect
+    Wait Until Page Contains Element    ${incorrect_password_msg}

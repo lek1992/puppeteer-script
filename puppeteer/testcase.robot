@@ -7,7 +7,12 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 TC_001 : Login FB Success
-    Login FB    ${fb.password_correct}    ${fb.password_correct}
+    Login FB    ${fb.email_correct}    ${fb.password_correct}
 
 TC_002 : Logic FB Not Success : Email and Password Is Incorrect
-    Login FB    ${fb.password_incorrect}    ${fb.password_incorrect}
+    Login FB    ${fb.email_incorrect}    ${fb.password_incorrect}
+    Verify in case input email Incorrect
+
+TC_003 : Logic FB Not Success : Password Is Incorrect
+    Login FB    ${fb.email_correct}    ${fb.password_incorrect}
+    Verify in case input password Incorrect
