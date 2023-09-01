@@ -7,16 +7,19 @@ Resource    ${CURDIR}/variable.resource
 Default Test Setup
     ${headless}    Get Variable Value    ${HEADLESS}    ${False}
     &{options}    Evaluate    {'headless': ${headless}}
-    Open Browser    ${fb.url}    browser=pwchrome    options=${options}
+    Open Browser    ${fb_url}    browser=pwchrome    options=${options}
 
 Login FB
-    [Arguments]    ${fb.email}    ${fb.password}
-    Input Text    ${fb-txt-email}    ${fb.email}
-    Input Text    ${fb-txt-password}    ${fb.password}
+    [Arguments]    ${fb_email}    ${fb_password}
+    Input Text    ${fb-txt-email}    ${fb_email}
+    Input Text    ${fb-txt-password}    ${fb_password}
     Click Element    ${fb-btn-login}
 
 Verify in case input email Incorrect
-    Wait Until Page Contains Element    ${incorrect_email_msg}
+    Wait Until Element Is Visible    ${fb-txt-emailIncorrect}
 
 Verify in case input password Incorrect
-    Wait Until Page Contains Element    ${incorrect_password_msg}
+    Wait Until Element Is Visible    ${fb-btn-tryAnotherWay}
+
+Verify in case login fb success
+    Wait Until Element Is Visible    ${fb-txt-postFb}

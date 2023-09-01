@@ -7,12 +7,14 @@ ${fb-messenger-url}         https://www.messenger.com/
 ${fb-txt-email}             id=email
 ${fb-txt-password}          id=pass
 ${fb-btn-login}             xpath=//*[@name='login']
+${fb-txt-emailIncorrect}    xpath=//*[contains(text(),"The email address you entered isn't connected to an account.")]
 # ${incorrect_password_msg}    xpath=//div[contains(text(),'The password that you've entered is incorrect. ')]
-${incorrect_password_msg}    xpath=//*[@id="loginform"]/div[2]/div[2]
-${incorrect_email_msg}    xpath=//*[@id="email_container"]/div[2]
+${fb-btn-tryAnotherWay}    xpath=//a[text()='Try another way']
+${fb-txt-postFb}          xpath=//span[contains(text(),"What's on your mind")]
 
-${fb.email_correct}         Siriporn@mintel.tech
-${fb.password_correct}      12345678Aa*
-${fb.email_incorrect}       iriporn@mintel.tech
-${fb.password_incorrect}    12345678
-${fb.url}                   https://www.facebook.com
+
+${fb_email_correct}         Siriporn@mintel.tech
+${fb_password_correct}      12345678Aa*
+${fb_email_incorrect}       iriporn@mintel.tech
+${fb_password_incorrect}    12345678
+${fb_url}                   https://www.facebook.com
